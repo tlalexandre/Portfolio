@@ -1,3 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +15,21 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.clash{
+  font-family: 'Clash Display', sans-serif;
+}
+
+.archivo{
+  font-family: 'Archivo', sans-serif;
+}
+
+
+body{
+  font-family: 'Clash Display', sans-serif;
+  background-color: #ECFEFF;
+  color: #0F172A;
 }
 
 a {
@@ -36,13 +55,12 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
   border: 1px solid transparent;
+  border-radius: 0.4em;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -53,6 +71,16 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.btn{
+  font-family: 'Clash Display', sans-serif;
+  color: #0f172a;
+  background-color:#ecfeff;
+  border: 1px solid #0f172a;
+  width: 75%;
+  box-shadow: 6px 5px 1px 0px #0f172a, 3px 2px 1px 0px #0f172a,3px 2px 1px 0px #0f172a;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -66,3 +94,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
