@@ -1,3 +1,6 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 #root {
   height: 100vh;
@@ -5,40 +8,74 @@
   width: 100%;
 }
 
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.grid-layout {
+  grid-template-areas: 
+      "nav image image"
+      "nav image image"
+      "desc desc desc";
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid-area-nav {
+  grid-area: nav;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.grid-area-image {
+  grid-area: image;
+  object-fit: cover;
+  object-position: center;
 }
 
-.card {
-  padding: 2em;
+.grid-area-desc {
+  grid-area: desc;
 }
 
-.read-the-docs {
-  color: #888;
+.clash{
+  font-family: 'Clash Display', sans-serif;
 }
 
+.archivo{
+  font-family: 'Archivo', sans-serif;
+}
+
+
+body{
+  font-family: 'Clash Display', sans-serif;
+  background-color: #ECFEFF;
+  color: #0F172A;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  /* border: 1px solid #0F172A; */
+  color:#0F172A;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+.char{
+  display: inline-block;
+  /* border: 1px solid #0F172A; */
+  /* border-radius: 20px; */
+  color: #0F172A;
+  transform: rotateX(-40deg);
+  /* box-shadow: 6px 6px 0px #0F172A; */
+  width:20%;
+  margin:0 5px;
+}

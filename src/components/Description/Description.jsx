@@ -1,6 +1,26 @@
-export default function Description(){
+import { pageData } from "../pageData"
+
+export default function Description({currentPage, hoveredSkill}){
+
+    let description;
+    if (currentPage === "Skills" && hoveredSkill) {
+        description = pageData[currentPage].content[hoveredSkill].description;
+    } else {
+        description = pageData[currentPage].description;
+    }
+
+    let shortDescription = pageData[currentPage].shortDescription
 
     return (
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, vel ipsum aspernatur consequatur tempore praesentium sapiente ab iste illum sint labore et soluta culpa aperiam eum necessitatibus tenetur neque id.</p>
+        <div className="grid-area-desc flex items-center bg-slate-900">
+            <div className="shortDescription flex flex-col items-center h-full justify-around w-1/3">
+                {shortDescription}
+            </div>
+            <div className="w-2/3">
+                <p className={"text-amber-400 text-[2.5em]" + (currentPage === "Home" ? " text-[6.4em] text-left" : "")}>
+                    {description}
+                </p>
+            </div>
+        </div>
     )
 }
