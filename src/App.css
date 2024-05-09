@@ -1,81 +1,143 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+
+body, html{
+  overflow: hidden;
+}
 
 #root {
   height: 100vh;
   text-align: center;
   width: 100%;
+  --black:#403D39;
+  --white:#F2E6E1;
+  --brown:#A2705E;
+  font-family: 'Clash Display', sans-serif;
+  background-color: var(--white) !important;
+  color: var(--black) !important;
+  cursor: none;
+  overflow: hidden;
+}
+.cursor{
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: var(--brown);
+  position: absolute;
+  z-index: 10000;
+  pointer-events: none;
+  will-change: transform;
+  mix-blend-mode: difference;
+}
+.nav{
+  height: 8vh;
+}
+.hovering-button{
+  width: 60px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: url(./assets/seeMore.png);
+  background-size: cover;
+  position: absolute;
+  z-index: 10001;
+  pointer-events: none;
+  will-change: transform;
+  mix-blend-mode: normal;
 }
 
-.grid-layout {
-  grid-template-areas: 
-      "nav image image"
-      "nav image image"
-      "desc desc desc";
+.description{
+  position: absolute;
+  top: 55.5%;
+  z-index:1000;
+  mix-blend-mode: difference;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
 }
-
-.grid-area-nav {
-  grid-area: nav;
+.heroTitle{
+  font-size:3em;
+  text-align: left;
+  text-transform: uppercase; 
+  color: var(--white);
+  -webkit-text-stroke: var(--black);
+  -webkit-text-stroke-width: 2px;
+  width: 100%;
+  z-index: 100;
 }
-
-.grid-area-image {
-  grid-area: image;
+.jobTitle{
+  font-size: 1.4em;
+  text-align-last: left;
+  text-transform: uppercase;
+  color: var(--brown);
+}
+.mainContent{
+  position: relative;
+  z-index: 5;
+  height: 55vh;
+  will-change: transform;
+  pointer-events: none;
+}
+.mainContentAfter{
+  content:"";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--brown);
+  background-size: cover;
+  background-position: center 10%;
+  mask-image: radial-gradient(
+    circle 7em at var(--Xpos) var(--Ypos),
+    black 99%,
+    transparent 100%
+    );
+  z-index: 2;
+  mix-blend-mode:difference;
+}
+.hiddenHeroImg{
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 50%;
+  border-radius: 0 50% 50% 0;
   object-fit: cover;
-  object-position: center;
+  align-self: center;
 }
 
-.grid-area-desc {
-  grid-area: desc;
+.heroImg{
+  object-fit: cover;
+  height: 100%;
+  z-index: 1;
 }
-
-.clash{
-  font-family: 'Clash Display', sans-serif;
+.clueContainer{
+  width: 50%;
+  font-size: 1.8em;
+  color: var(--white);
+  text-transform: uppercase;
+  margin: 0 auto;
 }
-
-.archivo{
-  font-family: 'Archivo', sans-serif;
-}
-
-
-body{
-  font-family: 'Clash Display', sans-serif;
-  background-color: #ECFEFF;
-  color: #0F172A;
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+button{
+  cursor: none;
 }
 
 
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-button {
-  /* border: 1px solid #0F172A; */
-  color:#0F172A;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-
-
-.char{
-  display: inline-block;
-  /* border: 1px solid #0F172A; */
-  /* border-radius: 20px; */
-  color: #0F172A;
-  transform: rotateX(-40deg);
-  /* box-shadow: 6px 6px 0px #0F172A; */
-  width:20%;
-  margin:0 5px;
+@media screen and (min-width:560px) {
+  .heroTitle{
+    font-size: 6.7em;
+    top: 45.5%;
+    -webkit-text-stroke-width:5px;
+  }
+  .jobTitle{
+    font-size: 3em;
+    text-align: center;
+  }
+  .clueContainer{
+    font-size: 3em;
+  }
 }
